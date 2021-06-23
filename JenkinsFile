@@ -10,16 +10,6 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building'
-            
-                int main()
-                {
-                     int num=2;
-                     if(num%2==0)
-                        cout << "Even";
-                     else
-                        cout << "Odd";
-                    return 0;
-                }
             }
         }
         stage('Deploy') {
