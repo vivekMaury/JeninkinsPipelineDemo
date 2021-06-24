@@ -31,9 +31,10 @@ pipeline {
                 echo 'Releasing'
                 bat '''@echo off 
                 md REALEASE'''
+                bat '''rename "SomeName.exe" "Release_%DATE%_%TIME%.exe"'''
                 bat '''@echo off
-                move SomeName.exe REALEASE'''
-                bat '''rename "SomeName.exe" "Release_%DATE%_%TIME%"'''
+                move Release_%DATE%_%TIME%.exe REALEASE'''
+                
             }
         }
     }
