@@ -25,7 +25,7 @@ pipeline {
         }
         stage('Release') {
             steps {
-                echo '%time%'
+                echo '%TIME%'
             }
         }
     }
