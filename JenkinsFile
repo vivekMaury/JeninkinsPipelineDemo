@@ -29,7 +29,7 @@ pipeline {
             steps {
                 echo 'Releasing'
                 bat '''@echo off 
-                md [REALEASE]'''
+                md REALEASE/Realease_%TIME%'''
             }
         }
     }
