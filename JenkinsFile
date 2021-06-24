@@ -10,6 +10,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building'
+                
             }
         }
         stage('Deploy') {
@@ -25,6 +26,8 @@ pipeline {
         stage('Release') {
             steps {
                 echo 'Releasing'
+                echo %DATE%
+                echo %TIME%
             }
         }
     }
