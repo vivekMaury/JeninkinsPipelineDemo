@@ -29,7 +29,7 @@ pipeline {
             steps {
                 echo 'Releasing'
                 bat '''@echo off 
-                md D:\JenkinsHome\workspace\PipelineOne\REALEASE\AA'''
+                md REALEASE'''
             }
         }
     }
