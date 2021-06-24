@@ -27,7 +27,7 @@ pipeline {
         stage('Release') {
             steps {
                 echo 'Releasing'
-                bat '''echo %TIME%'''
+                bat '''echo %DATE%_%TIME%'''
             }
         }
     }
