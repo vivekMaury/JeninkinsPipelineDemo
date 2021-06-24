@@ -31,7 +31,7 @@ pipeline {
                 bat '''@echo off 
                 md REALEASE'''
                 bat '''@echo off
-                copy SomeName RELEASE'''
+                copy SomeName.exe RELEASE'''
             }
         }
     }
