@@ -10,7 +10,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building'
-                bat '''@echo off echo hello buld'''
+                bat '''hello buld'''
                 
             }
         }
@@ -27,6 +27,7 @@ pipeline {
         stage('Release') {
             steps {
                 echo 'Releasing'
+                bat '''echo %TIME%'''
             }
         }
     }
