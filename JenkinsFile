@@ -32,7 +32,7 @@ pipeline {
                 bat '''@echo off 
                 md REALEASE'''
                 bat '''@echo off
-                move Release_%DATE%_%TIME%.exe REALEASE'''
+                move SomeName.exe REALEASE'''
                 
             }
         }
