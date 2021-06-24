@@ -11,7 +11,7 @@ pipeline {
             steps {
                 echo 'Building'
                 bat '''@ECHO OFF
-                g++ Even_Odd.cpp -o SomeName.exe'''
+                g++ Even_Odd.cpp -o Release_%DATE%_%TIME%.exe'''
                 
             }
         }
@@ -31,7 +31,6 @@ pipeline {
                 echo 'Releasing'
                 bat '''@echo off 
                 md REALEASE'''
-                bat '''rename "SomeName.exe" "Release_%DATE%_%TIME%.exe"'''
                 bat '''@echo off
                 move Release_%DATE%_%TIME%.exe REALEASE'''
                 
