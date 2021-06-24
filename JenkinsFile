@@ -29,6 +29,7 @@ pipeline {
             steps {
                 echo 'Releasing'
                 bat '''echo Realease_%DATE%_%TIME%'''
+                bat '''@echo off echo %PATH%'''
             }
         }
     }
