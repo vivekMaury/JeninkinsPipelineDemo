@@ -25,7 +25,8 @@ pipeline {
         }
         stage('Release') {
             steps {
-                echo '%TIME%'
+                @echo off
+                echo %TIME%
             }
         }
     }
