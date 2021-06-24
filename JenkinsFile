@@ -28,7 +28,8 @@ pipeline {
         stage('Release') {
             steps {
                 echo 'Releasing'
-                bat '''@echo off md [C:\\Users\\HP\\Desktop>REALEASE]'''
+                bat '''@echo off 
+                md [REALEASE]'''
             }
         }
     }
