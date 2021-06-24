@@ -11,13 +11,14 @@ pipeline {
             steps {
                 echo 'Building'
                 bat '''@ECHO OFF
-                g++ Even_Odd.cpp -o Some%DATE%Name.exe'''
+                g++ Even_Odd.cpp -o SomeName.exe'''
                 
             }
         }
         stage('Deploy') {
             steps {
                 echo 'Deploying'
+ 
             }
         }
         stage('Test') {
@@ -32,6 +33,7 @@ pipeline {
                 md REALEASE'''
                 bat '''@echo off
                 move SomeName.exe REALEASE'''
+                bat '''rename SomeName.exe Release_%DATE%_%TIME%'''
             }
         }
     }
