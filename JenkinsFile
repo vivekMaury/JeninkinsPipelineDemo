@@ -28,8 +28,7 @@ pipeline {
         stage('Release') {
             steps {
                 echo 'Releasing'
-                bat '''echo Realease_%DATE%_%TIME%'''
-                bat '''@echo off echo %PATH%'''
+                bat '''@echo off md [C:\\Users\\HP\\Desktop>REALEASE]'''
             }
         }
     }
