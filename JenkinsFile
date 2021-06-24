@@ -30,6 +30,8 @@ pipeline {
                 echo 'Releasing'
                 bat '''@echo off 
                 md REALEASE'''
+                bat '''@echo off
+                copy SomeName [RELEASE]'''
             }
         }
     }
