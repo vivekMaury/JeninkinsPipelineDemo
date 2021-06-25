@@ -18,6 +18,8 @@ pipeline {
         stage('Deploy') {
             steps {
                 echo 'Deploying'
+                bat '''@echo off
+                move SomeName.exe [REALEASE]'''
  
             }
         }
@@ -29,7 +31,7 @@ pipeline {
         stage('Release') {
             steps {
                 echo 'Releasing'
-                bat '''@echo off 
+                ::bat '''@echo off 
                 md REALEASE'''
                 bat '''@echo off
                 move SomeName.exe REALEASE'''
