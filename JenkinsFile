@@ -31,7 +31,8 @@ pipeline {
         stage('Release') {
             steps {
                 echo 'Releasing'
-               
+                bat ''' @echo off
+                move Realease_Timestamp [REALEASE]'''
             }
         }
     }
