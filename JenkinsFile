@@ -19,7 +19,7 @@ pipeline {
             steps {
                 echo 'Deploying'
                 bat '''@echo off
-                move SomeName.exe [REALEASE]'''
+                move SomeName.exe Release_Timestamp'''
  
             }
         }
