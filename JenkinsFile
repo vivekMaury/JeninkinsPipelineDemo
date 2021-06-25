@@ -51,7 +51,7 @@ pipeline {
                 move Test_Zipping_%d%_%t%.zip [REALEASE]
                 echo Done!'''
                 bat '''@echo off
-                del Realease_Timestamp'''
+                del /q Realease_Timestamp'''
             }
         }
     }
