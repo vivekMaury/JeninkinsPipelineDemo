@@ -31,9 +31,12 @@ pipeline {
         stage('Release') {
             steps {
                 echo 'Releasing'
-                
-             
-                
+                bat ''' echo on
+                for /f "tokens=3,2,4 delims=/- " %%x in ("%date%") do set d=%%y%%x%%z
+                set data=%d%
+                Echo zipping...
+                "Realease_Timestamp" a -tzip "Test_Zipping_%d%.zip"
+                echo Done!'''   
             }
         }
     }
