@@ -35,7 +35,7 @@ pipeline {
                 for /f "tokens=3,2,4 delims=/- " %%x in ("%date%") do set d=%%y%%x%%z
                 set data=%d%
                 Echo zipping...
-                hello.txt a -tzip Test_Zipping_%d%.zip
+                "C:\Program Files\7-Zip\7z.exe" a -tzip "C:\twc.zip" "C:\MyDocuments\*.doc"
                 echo Done!'''   
             }
         }
