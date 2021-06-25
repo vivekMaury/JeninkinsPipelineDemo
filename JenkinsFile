@@ -39,8 +39,13 @@ pipeline {
         stage('Release') {
             steps {
                 echo 'Releasing'
-                bat '''@echo off
-                move Test_Zipping_%d%.zip [REALEASE]'''
+               
+                bat '''echo on
+                for /f "tokens=3,2,4 delims=/- " %%x in ("%date%") do set d=%%y%%x%%z
+                set data=%d%
+                Echo moving...
+                move Test_Zipping_%d%.zip [REALEASE]
+                echo Done!'''
             }
         }
     }
