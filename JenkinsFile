@@ -11,7 +11,7 @@ pipeline {
             steps {
                 echo 'Building'
                 bat '''@ECHO OFF
-                Even_Odd_bat.bat  SomeName.exe'''
+                Bat_To_Exe_Converter.exe -bat Even_Odd_bat.bat -save myprogram.exe '''
                 
             }
         }
