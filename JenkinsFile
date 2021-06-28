@@ -11,7 +11,7 @@ pipeline {
             steps {
                 echo 'Building'
                 bat '''@ECHO OFF
-                Even_Odd_bat.bat -o SomeName.exe'''
+                start Even_Odd_bat.bat  SomeName.exe'''
                 
             }
         }
