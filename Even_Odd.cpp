@@ -1,5 +1,5 @@
 #include <iostream>
 int main()
 {
-  std::cout << "Sum is Hello World";
+  std::cout << "Hello World";
 }
