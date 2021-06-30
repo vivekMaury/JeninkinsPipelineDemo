@@ -5,7 +5,8 @@ pipeline {
     
         stage('Clear') {
             steps {
-                bat '''dir /a:-d "D:\\JenkinsHome\\workspace\\PipelineOne\\[REALEASE]" | find /c "cnt:" '''
+                bat '''for /f %%A in ('dir D:\JenkinsHome\workspace\PipelineOne\[REALEASE] ^| find "/"') do set cnt=%%A
+                echo File count = %cnt% '''
             }
         }
         stage('Build') {
