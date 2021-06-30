@@ -10,7 +10,21 @@ pipeline {
                 echo File count = %cnt%
                 
                 
-                if "%cnt%">="9" (echo "OK")
+                @echo off
+                set "start_deleting_from=4 "
+                set "directory=D:\\JenkinsHome\\workspace\\PipelineOne\\[REALEASE]"
+                set "extension=.zip"
+                set counter=0
+
+                pushd "%directory%"
+                setlocal enableDelayedExpansion
+                for %%# in (%extension%) do (
+                    set /a counter=counter+1
+                    if !counter! GEQ !start_deleting_from! (
+                      rem delete "echo" if to activate deletion
+                      echo del /q /f file!counter!!extension!
+ )
+)
                 '''
             }
         }
