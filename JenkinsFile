@@ -10,7 +10,7 @@ pipeline {
                 echo File count = %cnt%
                 
                 
-                if %cnt%>=9 echo("OK")
+                if %cnt%>=9 (echo "OK")
                 '''
             }
         }
