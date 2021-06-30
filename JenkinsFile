@@ -5,7 +5,7 @@ pipeline {
     
         stage('Clear') {
             steps {
-                bat '''dir /a:-d /s /b "D:\\JenkinsHome\\workspace\\PipelineOne\\[REALEASE]" | find /c ":\" '''
+                bat '''dir /a:-d /s /b "D:\\JenkinsHome\\workspace\\PipelineOne\\[REALEASE]" | find /c ":" '''
             }
         }
         stage('Build') {
