@@ -7,7 +7,7 @@ pipeline {
             steps {
                 bat '''@echo off
                 for /f %%A in ('dir "D:\\JenkinsHome\\workspace\\PipelineOne\\[REALEASE]" /a-d-s-h /b ^| find /v /c ""') do set cnt=%%A
-                echo File count = %cnt%
+                
                 
                 if %cnt%>=9 forfiles /p "D:\\JenkinsHome\\workspace\\PipelineOne\\[REALEASE]" /s /d -2 /c "cmd /c del @file : date >= 2 days >NUL"
                 '''
