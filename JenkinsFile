@@ -11,7 +11,7 @@ pipeline {
                 echo a="%a%"
                 echo limit = "%drive_limit%"
                 If %a% GTR %drive_limit% (
-                    del t*
+                    del t* '''
                 
             }
         }
