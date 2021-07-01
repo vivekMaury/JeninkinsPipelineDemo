@@ -9,7 +9,7 @@ pipeline {
                 set drive_limit = 10
                 for /f %%A in ('dir "D:\\JenkinsHome\\workspace\\PipelineOne\\[REALEASE]" /a-d-s-h /b ^| find /v /c ""') do set a=%%A
                 echo a="%a%"
-                echo limit = "%drive_limit%"
+                echo limit = 10
                 If %a% GTR %drive_limit% (
                     del t* '''
                 
