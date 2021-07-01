@@ -6,7 +6,7 @@ pipeline {
         stage('Clear') {
             steps { 
                echo 'hello'
-               bat ''' for /f "delims=5" %%a in ('dir "D:\\JenkinsHome\\workspace\\PipelineOne\\[REALEASE]" /B /S Test*') do del "%%a" '''
+               bat ''' for /f "delims=10" %%a in ('dir "D:\\JenkinsHome\\workspace\\PipelineOne\\[REALEASE]" /B /S Test*') do del "%%a" '''
             }
         }
         stage('Build') {
