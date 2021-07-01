@@ -8,6 +8,7 @@ pipeline {
                 bat '''@echo off
                 set limit = 10
                 for /f %%A in ('dir "D:\\JenkinsHome\\workspace\\PipelineOne\\[REALEASE]" /a-d-s-h /b ^| find /v /c ""') do set a=%%A
+                echo File count = %a%
                 if %a% >= %limit% ( del * )'''
                 
             }
