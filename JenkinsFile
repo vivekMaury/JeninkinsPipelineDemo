@@ -5,8 +5,13 @@ pipeline {
     
         stage('Clear') {
             steps {
-                bat '''for /f %%A in ('dir "D:\\JenkinsHome\\workspace\\PipelineOne\\[REALEASE]" /a-d-s-h /b ^| find /v /c ""') do set a=%%A
-                if "%a%" >="10" del D:\\JenkinsHome\\workspace\\PipelineOne\\[REALEASE]\\TEST*.zip'''
+                bat '''@echo off
+                set drive_limit = 10
+                for /f %%A in ('dir "D:\\JenkinsHome\\workspace\\PipelineOne\\[REALEASE]" /a-d-s-h /b ^| find /v /c ""') do set a=%%A
+                echo a="%a%"
+                echo limit = "%drive_limit%"
+                If %a% GTR %drive_limit% (
+                    del t*
                 
             }
         }
