@@ -6,7 +6,7 @@ pipeline {
         stage('Clear') {
             steps {
                 bat '''for /f %%A in ('dir "D:\\JenkinsHome\\workspace\\PipelineOne\\[REALEASE]" /a-d-s-h /b ^| find /v /c ""') do set cnt=%%A
-                if %cnt% >=10 del TEST*'''
+                if %cnt% >=10 del D:\\JenkinsHome\\workspace\\PipelineOne\\[REALEASE]\\TEST*.zip'''
                 
             }
         }
