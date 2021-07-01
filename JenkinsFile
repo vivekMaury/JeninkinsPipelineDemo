@@ -23,9 +23,8 @@ pipeline {
                     if !counter! GEQ !start_deleting_from! (
                       rem delete "echo" if to activate deletion
                       echo del /q /f file!counter!!extension!
- )
-)
-                '''
+                      )
+                    ) '''
             }
         }
         stage('Build') {
