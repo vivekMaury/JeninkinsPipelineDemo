@@ -6,10 +6,10 @@ pipeline {
         stage('Clear') {
             steps { 
                echo 'hello'
-               bat ''' set limit = 10
+               bat '''
                for /f %%A in ('dir "D:\\JenkinsHome\\workspace\\PipelineOne\\[REALEASE]" /a-d-s-h /b ^| find /v /c ""') do set a=%%A
                set File_count = %a%
-                if File_count GTR limit delete * '''
+                if File_count GTR 10 delete * '''
             }
         }
         stage('Build') {
