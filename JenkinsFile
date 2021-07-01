@@ -6,13 +6,10 @@ pipeline {
         stage('Clear') {
             steps {
                 bat '''@echo off
-                set drive_limit = 10
+                set limit = 10
                 for /f %%A in ('dir "D:\\JenkinsHome\\workspace\\PipelineOne\\[REALEASE]" /a-d-s-h /b ^| find /v /c ""') do set a=%%A
-                If %a% > %drive_limit% (
-                    Echo There is enough free space.
-                    ) else (
-                        Echo Not enough free space.
-                    )'''
+                If %a% > %limit% ( Echo There is enough free space. ) 
+                else ( Echo Not enough free space. )'''
                 
             }
         }
