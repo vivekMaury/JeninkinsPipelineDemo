@@ -27,7 +27,7 @@ pipeline {
         stage('Test') {
             steps {
                 echo 'Testing '
-                bat 'test.bat'
+                bat 'pipelinetest.bat'
             }
         }
         stage('Release') {
