@@ -5,7 +5,7 @@ pipeline {
     
         stage('Clear') {
             steps {
-                bat '''@echo off
+                bat '''
                 forfiles /m t* /c "cmd /c Del t* " /d -3'''
                 
             }
