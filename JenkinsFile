@@ -4,24 +4,21 @@ pipeline {
     stages {
     
         stage('Clear') {
-            steps {
-                
-                echo 'hello'
+            steps { 
+               echo 'hello'
                bat ''' for /f "delims=5" %%a in ('dir "D:\\JenkinsHome\\workspace\\PipelineOne\\[REALEASE]" /B /S Test*') do del "%%a" '''
             }
         }
         stage('Build') {
             steps {
                 echo 'Building'
-                bat 'build.bat'
-                
+                bat 'build.bat'  
             }
         }
         stage('Deploy') {
             steps {
                 echo 'Deploying'
                 bat 'deploy.bat'
- 
             }
         }
         stage('Test') {
@@ -34,8 +31,6 @@ pipeline {
             steps {
                 echo 'Releasing'
                  bat 'release.bat'
-             
-                
             }
         }
     }
