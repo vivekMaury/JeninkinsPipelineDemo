@@ -8,7 +8,7 @@ pipeline {
                 bat '''@echo off
                 set limit = 10
                 for /f %%A in ('dir "D:\\JenkinsHome\\workspace\\PipelineOne\\[REALEASE]" /a-d-s-h /b ^| find /v /c ""') do set a=%%A
-                If %a% > %limit% ( Echo There is enough free space. ) 
+                If %%a%% > %%limit%% ( Echo There is enough free space. ) 
                 else ( Echo Not enough free space. )'''
                 
             }
