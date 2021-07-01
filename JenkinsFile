@@ -9,7 +9,7 @@ pipeline {
                bat '''
                for /f %%A in ('dir "D:\\JenkinsHome\\workspace\\PipelineOne\\[REALEASE]" /a-d-s-h /b ^| find /v /c ""') do set a=%%A
                set File_count = %a%
-                if File_count == 10 ( 
+                if %File_count% == 10 ( 
                 del /q D:\\JenkinsHome\\workspace\\PipelineOne\\[REALEASE]\\Test* 
                 )'''
                
