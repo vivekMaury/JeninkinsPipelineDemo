@@ -8,7 +8,6 @@ pipeline {
                 bat '''@echo off
                 set drive_limit = 10
                 for /f %%A in ('dir "D:\\JenkinsHome\\workspace\\PipelineOne\\[REALEASE]" /a-d-s-h /b ^| find /v /c ""') do set a=%%A
-                echo a="%a%"
                 If %a% > %drive_limit% (
                     Echo There is enough free space.
                     ) else (
