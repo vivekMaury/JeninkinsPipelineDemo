@@ -5,26 +5,7 @@ pipeline {
     
         stage('Clear') {
             steps {
-                bat '''@echo off
-                for /f %%A in ('dir "D:\\JenkinsHome\\workspace\\PipelineOne\\[REALEASE]" /a-d-s-h /b ^| find /v /c ""') do set cnt=%%A
-                echo File count = %cnt%
-                
-                
-                @echo off
-                set "start_deleting_from=4 "
-                set "directory=D:\\JenkinsHome\\workspace\\PipelineOne\\[REALEASE]"
-                set "extension=.zip"
-                set counter=0
-
-                pushd "%directory%"
-                setlocal enableDelayedExpansion
-                for %%# in (%extension%) do (
-                    set /a counter=counter+1
-                    if !counter! GEQ !start_deleting_from! (
-                      rem delete "echo" if to activate deletion
-                      echo del /q /f file!counter!!extension!
-                      )
-                    ) '''
+                bat '''for /f "skip=10 eol=: delims=" %%F in ('dir /b /o-d *.zip') do @del "%%F" '''
             }
         }
         stage('Build') {
