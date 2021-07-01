@@ -5,7 +5,7 @@ pipeline {
     
         stage('Clear') {
             steps {
-                bat '''for /f "skip=10 eol=: delims=" %%F in ('dir D:\\JenkinsHome\\workspace\\PipelineOne\\[REALEASE] /b /o-d *.zip') do @del "%%F" '''
+                bat '''for /f "skip=10 eol=: delims=" %%F in ('dir "D:\\JenkinsHome\\workspace\\PipelineOne\\[REALEASE]" /b /o-d *.zip') do @del "%%F" '''
             }
         }
         stage('Build') {
