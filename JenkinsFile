@@ -5,15 +5,8 @@ pipeline {
     
         stage('Clear') {
             steps {
-                bat '''ECHO Removing files older than 14 days. >>%LOGFILE%
-cd /d %BKUPDIR%
-FOR /f "skip=14 delims=" %%A IN ('DIR /a:-d /b /o:-d /t:c %1*.zip ^2^>nul') DO IF EXIST "%%~fA" ECHO "%%~fA" >>%LOGFILE%
-FOR /f "skip=14 delims=" %%A IN ('DIR /a:-d /b /o:-d /t:c %1*.zip ^2^>nul') DO IF EXIST "%%~fA" DEL "%%~fA" >>%LOGFILE%
-FOR /f "skip=14 delims=" %%A IN ('DIR /a:-d /b /o:-d /t:c %1*.log ^2^>nul') DO IF EXIST "%%~fA" ECHO "%%~fA" >>%LOGFILE%
-FOR /f "skip=14 delims=" %%A IN ('DIR /a:-d /b /o:-d /t:c %1*.log ^2^>nul') DO IF EXIST "%%~fA" DEL "%%~fA" >>%LOGFILE%
-IF [%3]==[Y] GOTO SECONDBACKUPDIR
-IF [%3]==[y] GOTO SECONDBACKUPDIR
-GOTO END '''
+                bat '''for /f %%A in ('dir "D:\\JenkinsHome\\workspace\\PipelineOne\\[REALEASE]" /a-d-s-h /b ^| find /v /c ""') do set cnt=%%A
+                echo File count = %cnt% '''
             }
         }
         stage('Build') {
