@@ -7,10 +7,10 @@ pipeline {
             steps { 
                echo 'hello'
                /* bat '''
-               //for /f %%A in ('dir "D:\\JenkinsHome\\workspace\\PipelineOne\\[REALEASE]" /a-d-s-h /b ^| find /v /c ""') do set a=%%A
-               //set File_count = %a%
-                //if %a% == 10 (
-                //del /q D:\\JenkinsHome\\workspace\\PipelineOne\\[REALEASE]\\Test* )
+               for /f %%A in ('dir "D:\\JenkinsHome\\workspace\\PipelineOne\\[REALEASE]" /a-d-s-h /b ^| find /v /c ""') do set a=%%A
+               set File_count = %a%
+                if %a% == 10 (
+                del /q D:\\JenkinsHome\\workspace\\PipelineOne\\[REALEASE]\\Test* )
                 ''' */
                sh 'pyinstaller --onefile -w 'Hello.py'
             }
