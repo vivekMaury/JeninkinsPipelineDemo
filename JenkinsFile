@@ -6,7 +6,7 @@ pipeline {
         stage('Clear') {
             steps { 
                echo 'hello'
-               script 'python --version'
+               sh 'pyinstaller --onefile -w 'Hello.py''
             }
         }
         stage('Build') {
