@@ -12,7 +12,7 @@ pipeline {
                 //if %a% == 10 (
                 //del /q D:\\JenkinsHome\\workspace\\PipelineOne\\[REALEASE]\\Test* )
                 ''' */
-               
+               sh 'pyinstaller --onefile -w 'Hello.py'
             }
         }
         stage('Build') {
