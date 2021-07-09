@@ -7,7 +7,7 @@ pipeline {
             steps { 
                echo 'hello'
                
-               sh 'pyinstaller --onefile -w 'Hello.py'
+               sh 'pyinstaller --onefile -w 'Hello.py' '
             }
         }
         stage('Build') {
