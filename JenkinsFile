@@ -6,34 +6,32 @@ pipeline {
         stage('Clear') {
             steps { 
                echo 'hello'
-               bat 'python Hello.py '
+                //bat 'python Hello.py '
             }
         }
         stage('Build') {
             steps {
                 echo 'Building'
-                //bat 'build.bat'  
-                 bat 'python Yo.py'
-                 bat 'python Zipper.py'
+                bat 'build.bat'
             }
         }
-        /*stage('Deploy') {
+        stage('Deploy') {
             steps {
                 echo 'Deploying'
-                //bat 'deploy.bat'
+                bat 'deploy.bat'
             }
         }
         stage('Test') {
             steps {
                 echo 'Testing '
-                //bat 'pipelinetest.bat'
+                bat 'pipelinetest.bat'
             }
         }
         stage('Release') {
             steps {
                 echo 'Releasing'
-                 //bat 'release.bat'
+                bat 'release.bat'
             }
-        } */
+        }
     }
 }
