@@ -14,6 +14,7 @@ pipeline {
                 echo 'Building'
                 //bat 'build.bat'  
                  bat 'python Yo.py'
+                 bat 'python Zipper.py'
             }
         }
         /*stage('Deploy') {
