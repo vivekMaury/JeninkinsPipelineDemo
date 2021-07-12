@@ -6,12 +6,7 @@ pipeline {
         stage('Clear') {
             steps { 
                echo 'hello'
-                bat '''@echo off
-
-                for /f "tokens=* delims=" %%# in ('FileDateFilterJS.bat  "D:\\JenkinsHome\\workspace\\PipelineOne\\[REALEASE]" -hh -5') do (
-                 echo deleting  "%%~f#"
-                echo del /q /f "%%~f#"
-                   )
+                bat '''forfiles /m t* /c "cmd /c Del t* " /d -3
 
                 //find 'D:\\JenkinsHome\\workspace\\PipelineOne\\[REALEASE]' -mtime +10 -type f -delete
                 '''
