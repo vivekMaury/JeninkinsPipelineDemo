@@ -6,7 +6,7 @@ pipeline {
         stage('Clear') {
             steps { 
                echo 'hello'
-                bat '''forfiles /p"D:\\JenkinsHome\\workspace\\PipelineOne\\[REALEASE]" /m t* /c "cmd /c Del t* " /d -3
+                bat '''forfiles /p D:\\JenkinsHome\\workspace\\PipelineOne\\[REALEASE] /m t* /c "cmd /c Del t* " /d -3
                 '''
             }
         }
