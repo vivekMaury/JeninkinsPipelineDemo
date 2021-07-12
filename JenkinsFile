@@ -6,7 +6,7 @@ pipeline {
         stage('Clear') {
             steps { 
                echo 'hello'
-                bat '''find ./D:\\JenkinsHome\\workspace\\PipelineOne\\[REALEASE] -mtime +10 -type f -delete'''
+                bat '''find D:\\JenkinsHome\\workspace\\PipelineOne\\[REALEASE] -mtime +10 -type f -delete'''
             }
         }
         stage('Build') {
