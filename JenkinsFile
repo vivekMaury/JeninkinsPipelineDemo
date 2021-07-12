@@ -13,12 +13,7 @@ pipeline {
             steps {
                 echo 'Building'
                 //bat 'build.bat'  
-                 bat ''' import shutil
-
-                original = r'D:\\JenkinsHome\\workspace\\PipelineOne\\Hello.py'
-                target = r'D:\\JenkinsHome\\workspace\\PipelineOne\\[REALEASE]\\Hello.py'
-
-                shutil.move(original,target)'''
+                 bat 'python Yo.py'
             }
         }
         /*stage('Deploy') {
