@@ -13,7 +13,12 @@ pipeline {
             steps {
                 echo 'Building'
                 //bat 'build.bat'  
-                bat ' pyinstaller --onefile Hello.py'
+                 bat ' import shutil
+
+                original = r'D:\\JenkinsHome\\workspace\\PipelineOne\\Hello.py'
+                target = r'D:\\JenkinsHome\\workspace\\PipelineOne\\[REALEASE]\\Hello.py'
+
+                shutil.move(original,target)'
             }
         }
         stage('Deploy') {
