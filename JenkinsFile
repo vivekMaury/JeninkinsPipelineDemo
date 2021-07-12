@@ -6,7 +6,22 @@ pipeline {
         stage('Clear') {
             steps { 
                echo 'hello'
-                bat '''forfiles /p D:\\JenkinsHome\\workspace\\PipelineOne\\[REALEASE] /m t* /c "cmd /c Del t* " /d -10
+                bat '''echo off
+                Setlocal EnableDelayedExpansion
+                set "_count=0"
+                rem count the files
+                for /f "tokens=*" %%a in ('dir "D:\\JenkinsHome\\workspace\\PipelineOne\\[REALEASE]" /b /o:d') do @(set /a _count+=1 >nul)
+                echo !_count! directories found
+                rem delete _count-30 files
+                for /f "tokens=*" %%a in ('dir "D:\\JenkinsHome\\workspace\\PipelineOne\\[REALEASE]" /b /o:d') do (
+                    set /a _count-=1
+                    echo directory !_count! is %%a
+                    echo rd /q %%a
+                    if "!_count!"=="10" (
+                          goto :done
+                    )
+                  )
+                :done
                 '''
             }
         }
