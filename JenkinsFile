@@ -6,14 +6,15 @@ pipeline {
         stage('Clear') {
             steps { 
                echo 'hello'
-                bat '''echo off
+                bat '''
+                echo off
                 Setlocal EnableDelayedExpansion
                 set "_count=0"
                 rem count the files
-                for /f "tokens=*" %%a in ('dir "D:\\JenkinsHome\\workspace\\PipelineOne\\[REALEASE]\\Test*" /b /o:d') do @(set /a _count+=1 >nul)
+                for /f "tokens=*" %%a in ('dir "D:\\JenkinsHome\\workspace\\PipelineOne\\[REALEASE]\\" /b /o:d') do @(set /a _count+=1 >nul)
                 echo !_count! directories found
                 rem delete _count-10 files
-                for /f "tokens=*" %%a in ('dir "D:\\JenkinsHome\\workspace\\PipelineOne\\[REALEASE]\\Test*" /b /o:d') do (
+                for /f "tokens=*" %%a in ('dir "D:\\JenkinsHome\\workspace\\PipelineOne\\[REALEASE]\\" /b /o:d') do (
                     set /a _count-=1
                     echo directory !_count! is %%a
                     rd /q %%a
