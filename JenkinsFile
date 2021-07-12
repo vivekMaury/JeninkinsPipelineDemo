@@ -13,7 +13,7 @@ pipeline {
             steps {
                 echo 'Building'
                 //bat 'build.bat'  
-                bat ''' pyinstaller --onefile Hello.py'''
+                bat ' pyinstaller --onefile Hello.py'
             }
         }
         stage('Deploy') {
