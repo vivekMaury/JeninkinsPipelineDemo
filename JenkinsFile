@@ -21,7 +21,7 @@ pipeline {
                 shutil.move(original,target)'''
             }
         }
-        stage('Deploy') {
+        /*stage('Deploy') {
             steps {
                 echo 'Deploying'
                 //bat 'deploy.bat'
@@ -38,6 +38,6 @@ pipeline {
                 echo 'Releasing'
                  //bat 'release.bat'
             }
-        }
+        } */
     }
 }
