@@ -8,7 +8,7 @@ pipeline {
                echo 'hello'
                 bat '''@echo off
 
-                for /f "tokens=* delims=" %%# in ('FileDateFilterJS.bat  "." -hh -5') do (
+                for /f "tokens=* delims=" %%# in ('FileDateFilterJS.bat  "D:\\JenkinsHome\\workspace\\PipelineOne\\[REALEASE]" -hh -5') do (
                  echo deleting  "%%~f#"
                 echo del /q /f "%%~f#"
                    )
